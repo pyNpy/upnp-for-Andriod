@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources >
+    <declare-styleable name="selfDef_baseview_TextView_CheckBox">
+        <attr name="mText" format="string"/>
+        <attr name="mCheck" format="boolean"/>
+    </declare-styleable>
+</resources>

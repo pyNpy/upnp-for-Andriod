@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion '27'
+
+    defaultConfig {
+        applicationId "kl.example.com.imageslector"
+        minSdkVersion 18
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+    }
+    dexOptions {
+        preDexLibraries true
+        javaMaxHeapSize "3g"//越大越好
+        incremental true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+}
+repositories {
+    maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    mavenCentral()
+    flatDir { dirs 'libs' }
+}
+dependencies {
+    compile fileTree(includes: ['*.jar'], dir: 'libs')
+    compile(name: 'picture_library-release', ext: 'aar')
+    compile(name: 'ucrop-release', ext: 'aar')
+    compile files('libs/cdi-api-1.2.jar')
+    compile files('libs/cling-support-2.1.2.jar')
+    compile files('libs/dom-2.3.0-jaxb-1.0.6.jar')
+    compile files('libs/javax-servlet-api-3.1.0.jar')
+    compile files('libs/javax.inject-1.jar')
+    compile files('libs/jetty-client-8.1.22.v20160922.jar')
+    compile files('libs/jetty-continuation-8.1.22.v20160922.jar')
+    compile files('libs/jetty-http-8.1.22.v20160922.jar')
+    compile files('libs/jetty-io-8.1.22.v20160922.jar')
+    compile files('libs/jetty-security-8.1.22.v20160922.jar')
+    compile files('libs/jetty-server-8.1.22.jar')
+    compile files('libs/jetty-servlet-8.1.22.v20160922.jar')
+    compile files('libs/jetty-util-8.1.22.v20160922.jar')
+    compile files('libs/sax-2.0.1.jar')
+    compile files('libs/seamless-http-1.1.2.jar')
+    compile files('libs/seamless-swing-1.1.2.jar')
+    compile files('libs/seamless-util-1.1.2.jar')
+    compile files('libs/seamless-xml-1.1.2.jar')
+    compile files('libs/slf4j-api-1.7.25.jar')
+    compile 'com.android.support:appcompat-v7:27.0.2'
+    compile 'com.android.support:recyclerview-v7:27.0.2'
+    compile 'com.github.bumptech.glide:glide:4.5.0'
+    compile 'io.reactivex.rxjava2:rxjava:2.0.5'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'com.android.support.constraint:constraint-layout:+'
+    compile files('libs/http-server.jar')
+    compile files('libs/slf4j-jdk14-1.7.9.jar')
+}
