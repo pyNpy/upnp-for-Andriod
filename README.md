@@ -6,4 +6,4 @@
 * may not support some deviecs
 * this upnp protocol writen by Java,which can rewrite with windows Java application
 * It's an protocol,but not bugs,to control screen device which supports upnp protocol
-* [download demo](./out-apk/upnp-demo.apk)
+* [download demo](https://github.com/pyNpy/upnp-for-Andriod/raw/master/out-apk/upnp-demo.apk)
